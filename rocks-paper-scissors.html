@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Practicing Javascript</title>
+	<meta charset="UTF-8" />
+
+	<script>
+	var userChoice = prompt("Do you choose rock, paper or scissor?");
+	var computerChoice = Math.random();
+
+	if (computerChoice < 0.34) {
+		computerChoice = "rock"
+	} else if (computerChoice >= 0.34 && computerChoice < 0.67) {
+		computerChoice = "paper"
+	} else {computerChoice = "scissor"
+	};
+
+	function compare(choice1,choice2){
+		if (choice1 === choice2) {
+			alert("The result is a tie!")
+		} if (choice1 === "rock") {
+			if (choice2 === "paper") {
+				alert("computer wins")
+			} else if (choice2 === "scissor") {
+				alert("I win")
+			}} 
+
+			if (choice1 === "paper") {
+			if (choice2 === "rock") {
+				alert("I win")
+			} else if (choice2 === "scissor") {
+				alert("computer wins")
+			}}
+
+			if (choice1 === "scissor") {
+			if (choice2 === "rock") {
+				alert("compter wins")
+			} else if (choice2 === "paper") {
+				alert("I win")
+			}}
+		};
+
+		compare(userChoice,computerChoice);
+
+	
+	</script>
+	
+</head>
+	
+<body>
+	<h1>Rocks, Paper, Scissor</h1>
+
+	<script>
+	document.write("me - " + userChoice + "<br>");
+	document.write("computer - " + computerChoice);
+
+	return compare(userChoice,computerChoice);
+	
+
+
+	</script>
+
+
+</body>
+</html>

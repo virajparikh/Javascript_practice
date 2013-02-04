@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Javascript assignment: Student Grades</title>
+	<meta charset="UTF-8" />
+	
+	<script>
+	var studentScores = [["Bill Gross", 99],
+						["Joe Sixpack", 37],
+						["Ketan Patel", 75],
+						["Chris Johnson", 89 ],
+						["Jackie Robinson", 81], 
+						["Steve Smith", 78],
+						["JR Ewing", 64],
+						["Harry Potter", 74],
+						["Jeremy Lin", 87],
+						["Jay Cutler", 88]];
+	var total = 0;
+
+	function calcTotal(x) {
+		for (var i = 0; i < studentScores.length; i++) {
+			total += studentScores[i][1];
+		}
+			return total;	
+	};
+	
+	function avgScore(x) {
+		var average = total/studentScores.length;
+		return average.toFixed(2);
+	};
+
+	function calcGrade(y) {
+		if (y >= 90) {
+			grade = "A";
+		} else if (y >= 80 ) {
+			grade = "B";
+		} else if (y >= 70) {
+			grade = "C";
+		} else if (y >= 60 ) {
+			grade = "D";
+		} else { 
+			grade = "F";
+		}
+		return grade;
+	 };
+	</script>
+	
+</head>
+	
+<body>
+	<h1>Javascript assignment: Student Grades</h1>
+
+	<script>
+		for (var i = 0; i < studentScores.length; i++) {
+    	document.write(studentScores[i][0] + " " + "-" + " " + studentScores[i][1] + " " + "-" + " <strong>" + calcGrade(studentScores[i][1]) + "</strong><br/>");
+    }; 
+    	document.write("<h3>Total score: " + calcTotal(studentScores) + "</h3>");
+
+    	document.write("<h3>Average score:  " + avgScore() + "</h3>");
+
+    	document.write("<h3>Letter grade:  " + calcGrade(avgScore()) + "</h3>");
+     </script>
+
+</body>
+</html>
