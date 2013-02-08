@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Pizza</title>
+    <script type="text/javascript">
+      function flip(pizzatype) {
+        if (pizzatype.value === "Veggie Special") {     //see line 29
+            document.forms["pizzaform"].topping.value = "veggies";    //reaches down into the DOM, line 35
+        } else if (pizzatype.value === "Meat Special") {   //see line 30
+            document.forms["pizzaform"].topping.value = "meat";     //reaches down into the DOM, line 36
+        } else if (pizzatype.value === "Hawaiian") {  //see line 31
+            document.forms["pizzaform"].topping.value = "hampineapple"; //reaches down into the DOM, line 37
+      };
+  }
+
+    /*create a function flip with a parameter of pizzatype
+        if the value of pizzatype equals "Veggie Special"
+            select the veggies option
+        else if the value of pizzatype equals "Meat Special"
+            select the meat option
+        else if the value of pizzatype equals "Hawaiian"
+            select the hampineapple option */
+    </script>
+</head>
+<body>
+    <form id="pizzaform" action="#">
+        <p>
+        <button id="vegbutton" type="button" name="veggiespecial" value="Veggie Special" onclick="flip(document.getElementById('vegbutton'))">Veggie</button>    <!-- onclick is an event -->
+        <button id="meatbutton" type="button" name="meatspecial" value="Meat Special" onclick="flip(meatEl)">Meat</button>
+        <button id="hawbutton" type="button" name="hawaiian" value="Hawaiian" onclick="flip(hawEl)">Hawaiian</button>
+        </p>
+        Main Topping: <select name="topping">
+        <option value="cheese" selected="selected">Cheese</option>
+        <option value="veggies">Veggies</option>
+        <option value="meat">Meat</option>
+        <option value="hampineapple">Ham & Pineapples</option>
+        </select>
+    </form>
+    <script type="text/javascript">
+    var vegEl = document.getElementById("vegbutton");   //d
+    var meatEl = document.getElementById("meatbutton");
+    var hawEl = document.getElementById("hawbutton");
+
+    </script>
+</body>
+</html>
